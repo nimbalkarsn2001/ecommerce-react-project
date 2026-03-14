@@ -73,6 +73,43 @@
   margin-top: 0;
 }
 
+.footer {
+  margin-top: 2rem;
+  padding: 1rem 1.2rem;
+  background: #111827;
+  color: #d1d5db;
+}
+
+.footer-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #f9fafb;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

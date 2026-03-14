@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <div className="navbar-brand">EcommerceApp</div>
+        <div className="navbar-brand">Amazon</div>
         <ul className="navbar-nav">
           <li className="nav-item">
             <a href="#home" className="nav-link">Home</a>
@@ -23,7 +23,7 @@ function App() {
 
       <main className="content">
         <section id="home">
-          <h1>Welcome to EcommerceApp</h1>
+          <h1>Welcome to Amazon</h1>
           <p>Use the navbar above to navigate between sections.</p>
         </section>
 
@@ -42,6 +42,17 @@ function App() {
           <p>Contact details and form content goes here.</p>
         </section>
       </main>
+
+      <footer className="footer">
+        <div className="footer-content">
+          <p>&copy; {new Date().getFullYear()} Amazon. All rights reserved.</p>
+          <div className="footer-links">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#support">Support</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
