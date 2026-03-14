@@ -1,60 +1,43 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { StoreProvider } from './context/StoreContext';
+import { Header } from './component/Header';
+import Footer from './component/footer';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
+import Wishlist from './pages/Wishlist';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Checkout from './pages/Checkout';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <nav className="navbar">
-        <div className="navbar-brand">Amazon</div>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a href="#home" className="nav-link">Home</a>
-          </li>
-          <li className="nav-item">
-            <a href="#products" className="nav-link">Products</a>
-          </li>
-          <li className="nav-item">
-            <a href="#about" className="nav-link">About</a>
-          </li>
-          <li className="nav-item">
-            <a href="#contact" className="nav-link">Contact</a>
-          </li>
-        </ul>
-      </nav>
+    <StoreProvider>
+      <div className="App">
+          <Header />
 
-      <main className="content">
-        <section id="home">
-          <h1>Welcome to Amazon</h1>
-          <p>Use the navbar above to navigate between sections.</p>
-        </section>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
 
-        <section id="products">
-          <h2>Products</h2>
-          <p>Product listing will go here.</p>
-        </section>
-
-        <section id="about">
-          <h2>About</h2>
-          <p>This is a demo e-commerce site built with React.</p>
-        </section>
-
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>Contact details and form content goes here.</p>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; {new Date().getFullYear()} Amazon. All rights reserved.</p>
-          <div className="footer-links">
-            <a href="#privacy">Privacy</a>
-            <a href="#terms">Terms</a>
-            <a href="#support">Support</a>
-          </div>
+          <Footer />
         </div>
-      </footer>
-    </div>
+    </StoreProvider>
   );
 }
 
 export default App;
+  

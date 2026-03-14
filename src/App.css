@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell,"Open Sans","Helvetica Neue", sans-serif;
   min-height: 100vh;
   background: #f9fafb;
   color: #1f2937;
@@ -34,9 +34,6 @@
   padding: 0;
 }
 
-.nav-item {
-}
-
 .nav-link {
   color: #d1d5db;
   text-decoration: none;
@@ -65,7 +62,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   padding: 1rem 1.25rem;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 1px 2px rgba(15,23,42,0.08);
 }
 
 .content h1,
@@ -109,12 +106,215 @@
   color: #f9fafb;
 }
 
+.filters,
+.cart-items,
+.wishlist-items,
+.checkout-grid,
+.order-summary,
+.payment-form,
+.product-card,
+.form-container {
+  margin-bottom: 1.25rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters input,
+.filters select {
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.6rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.16);
+}
+
+.product-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+
+.product-details {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-details .category {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.product-details .price {
+  font-weight: 700;
+}
+
+.product-action,
+.wishlist-actions,
+.quantity-control {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.product-action button,
+.wishlist-actions button,
+.checkout-box button,
+.btn,
+.btn-secondary,
+.btn-link {
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.btn {
+  background: #111827;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #d1d5db;
+  color: #1f2937;
+}
+
+.btn-link {
+  background: transparent;
+  color: #f9fafb;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.btn:disabled,
+.btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cart-row,
+.empty-message,
+.order-summary,
+.payment-form {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.9rem;
+  background: #ffffff;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.cart-image {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.cart-info h3 {
+  margin: 0;
+}
+
+.quantity-control input {
+  width: 45px;
+  text-align: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.25rem;
+}
+
+.checkout-box,
+.checkout-grid {
+  margin-top: 1rem;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.order-summary ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.order-summary .total {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form-container {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.form-container form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.form-container input {
+  padding: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.3rem;
+}
+
+.error {
+  color: #b91c1c;
+}
+
+.success {
+  color: #047857;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
