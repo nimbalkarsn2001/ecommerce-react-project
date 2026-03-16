@@ -20,23 +20,38 @@ function Login() {
   };
 
   return (
-    <main className="content form-container">
-      <h1>Login</h1>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <label>
-          Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
-        <button className="btn">Login</button>
-      </form>
-      <p>
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </p>
+    <main className="login-page">
+      <div className="login-card">
+        <h2>Login</h2>
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="input-pill"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="input-pill"
+          />
+          <div className="forgot-password">
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
+          <button type="submit" className="btn login-btn">
+            Login
+          </button>
+        </form>
+        <p className="login-help">
+          Don't have an account? <Link to="/signup">Sign up</Link>
+        </p>
+      </div>
     </main>
   );
 }

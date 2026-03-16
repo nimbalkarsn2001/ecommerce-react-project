@@ -21,27 +21,43 @@ function Signup() {
   };
 
   return (
-    <main className="content form-container">
-      <h1>Sign Up</h1>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
-        </label>
-        <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <label>
-          Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
-        <button className="btn">Sign Up</button>
-      </form>
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
+    <main className="login-page">
+      <div className="login-card">
+        <h2>Sign Up</h2>
+        {error && <p className="error">{error}</p>}
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="input-pill"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="input-pill"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="input-pill"
+          />
+          <button type="submit" className="btn login-btn">
+            Sign Up
+          </button>
+        </form>
+        <p className="login-help">
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
+      </div>
     </main>
   );
 }

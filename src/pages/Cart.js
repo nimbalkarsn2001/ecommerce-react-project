@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useStore } from '../context/StoreContext';
-
 function Cart() {
   const { cart, totalPrice, removeFromCart, updateCartQuantity, clearCart } = useStore();
-
   return (
     <main className="content">
       <h1>Your Cart</h1>
