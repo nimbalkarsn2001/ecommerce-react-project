@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
-import '../styles/Cart.css';
+import { useStore } from '../../context/StoreContext';
+import '../../styles/Cart.css';
 
 /**
  * Cart Page Component
@@ -104,39 +104,27 @@ function Cart() {
           {/* Cart Summary */}
           <aside className="cart-summary">
             <h2>Order Summary</h2>
-
-            <div className="summary-row">
-              <span>Subtotal:</span>
+            <div className="summary-item">
+              <span>Subtotal</span>
               <span>${totalPrice.toFixed(2)}</span>
             </div>
-
-            <div className="summary-row">
-              <span>Shipping:</span>
-              <span className="shipping-free">FREE</span>
-            </div>
-
-            <div className="summary-row">
-              <span>Tax:</span>
+            <div className="summary-item">
+              <span>Tax (10%)</span>
               <span>${(totalPrice * 0.1).toFixed(2)}</span>
             </div>
-
-            <div className="summary-row summary-total">
-              <span>Total:</span>
+            <div className="summary-item total">
+              <span>Total</span>
               <span>${(totalPrice * 1.1).toFixed(2)}</span>
             </div>
-
-            <div className="cart-actions">
-              <Link to="/checkout" className="btn btn-primary btn-block">
-                Proceed to Checkout
-              </Link>
-              <Link to="/products" className="btn btn-secondary btn-block">
-                Continue Shopping
-              </Link>
-            </div>
-
-            <button className="btn-clear-cart" onClick={clearCart}>
+            <Link to="/checkout" className="btn btn-primary btn-full">
+              Proceed to Checkout
+            </Link>
+            <button onClick={clearCart} className="btn btn-secondary btn-full">
               Clear Cart
             </button>
+            <Link to="/products" className="btn btn-secondary btn-full">
+              Continue Shopping
+            </Link>
           </aside>
         </div>
       )}

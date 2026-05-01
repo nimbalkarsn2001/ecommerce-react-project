@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
+import { useStore } from '../../context/StoreContext';
 
 /**
  * ProtectedRoute Component

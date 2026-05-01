@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
-import ProductCard from '../component/ProductCard';
-import '../styles/Products.css';
+import { useStore } from '../../context/StoreContext';
+import ProductCard from '../../components/product/ProductCard';
+import '../../styles/Products.css';
 
 /**
  * Wishlist Page Component

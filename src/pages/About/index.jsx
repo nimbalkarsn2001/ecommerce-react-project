@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Pages.css';
+import '../../styles/Pages.css';
 
 /**
  * Professional About Page
@@ -99,45 +99,8 @@ function About() {
       {/* Team Section */}
       <section className="page-section team-section">
         <h2>Meet Our Team</h2>
-
-        <p>
-          Behind EcommerceHub is a passionate team of designers, developers,
-          marketers, and customer support specialists dedicated to creating
-          the best online shopping experience.
-        </p>
-
-        <div className="team-grid">
-
-          <div className="team-card">
-            <img
-              src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="CEO"
-            />
-            <h4>John Carter</h4>
-            <p>Founder & CEO</p>
-          </div>
-
-          <div className="team-card">
-            <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="CTO"
-            />
-            <h4>Sarah Wilson</h4>
-            <p>Chief Technology Officer</p>
-          </div>
-
-          <div className="team-card">
-            <img
-              src="https://randomuser.me/api/portraits/men/65.jpg"
-              alt="Marketing"
-            />
-            <h4>Michael Lee</h4>
-            <p>Head of Marketing</p>
-          </div>
-
-        </div>
+        <p>Our dedicated team works tirelessly to bring you the best shopping experience.</p>
       </section>
-
     </main>
   );
 }

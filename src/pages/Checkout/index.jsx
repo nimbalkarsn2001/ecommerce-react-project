@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
-import '../styles/Pages.css';
+import { useStore } from '../../context/StoreContext';
+import '../../styles/Pages.css';
 
 /**
  * Checkout Page
@@ -98,12 +98,17 @@ function Checkout() {
           {/* Checkout Form */}
           <div className="checkout-section">
             <h2>Billing & Payment</h2>
-            {message && <div className={`alert alert-${messageType}`}>{message}</div>}
+
+            {message && (
+              <div className={`alert alert-${messageType}`}>
+                {message}
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="checkout-form">
               {/* Billing Information */}
-              <fieldset>
-                <legend>Billing Information</legend>
+              <fieldset className="form-section">
+                <legend>Billing Address</legend>
 
                 <div className="form-row">
                   <div className="form-group">
@@ -114,8 +119,8 @@ function Checkout() {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleChange}
-                      required
                       disabled={isProcessing}
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -126,8 +131,8 @@ function Checkout() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
                       disabled={isProcessing}
+                      required
                     />
                   </div>
                 </div>
@@ -141,22 +146,23 @@ function Checkout() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      required
                       disabled={isProcessing}
+                      required
                     />
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="address">Address</label>
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleChange}
-                      required
-                      disabled={isProcessing}
-                    />
-                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="address">Address</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleChange}
+                    disabled={isProcessing}
+                    required
+                  />
                 </div>
 
                 <div className="form-row">
@@ -168,39 +174,39 @@ function Checkout() {
                       name="city"
                       value={formData.city}
                       onChange={handleChange}
-                      required
                       disabled={isProcessing}
+                      required
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="zipCode">ZIP Code</label>
+                    <label htmlFor="zipCode">Zip Code</label>
                     <input
                       type="text"
                       id="zipCode"
                       name="zipCode"
                       value={formData.zipCode}
                       onChange={handleChange}
-                      required
                       disabled={isProcessing}
+                      required
                     />
                   </div>
                 </div>
               </fieldset>
 
               {/* Payment Information */}
-              <fieldset>
-                <legend>Payment Information</legend>
+              <fieldset className="form-section">
+                <legend>Payment Details</legend>
 
                 <div className="form-group">
-                  <label htmlFor="cardName">Name on Card</label>
+                  <label htmlFor="cardName">Cardholder Name</label>
                   <input
                     type="text"
                     id="cardName"
                     name="cardName"
                     value={formData.cardName}
                     onChange={handleChange}
-                    required
                     disabled={isProcessing}
+                    required
                   />
                 </div>
 
@@ -210,12 +216,12 @@ function Checkout() {
                     type="text"
                     id="cardNumber"
                     name="cardNumber"
+                    placeholder="1234 5678 9012 3456"
                     value={formData.cardNumber}
                     onChange={handleChange}
-                    placeholder="1234 5678 9012 3456"
                     maxLength="19"
-                    required
                     disabled={isProcessing}
+                    required
                   />
                 </div>
 
@@ -226,38 +232,37 @@ function Checkout() {
                       type="text"
                       id="expiry"
                       name="expiry"
+                      placeholder="MM/YY"
                       value={formData.expiry}
                       onChange={handleChange}
-                      placeholder="MM/YY"
                       maxLength="5"
-                      required
                       disabled={isProcessing}
+                      required
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="cvv">CVV</label>
                     <input
-                      type="password"
+                      type="text"
                       id="cvv"
                       name="cvv"
+                      placeholder="123"
                       value={formData.cvv}
                       onChange={handleChange}
-                      placeholder="123"
-                      maxLength="4"
-                      required
+                      maxLength="3"
                       disabled={isProcessing}
+                      required
                     />
                   </div>
                 </div>
               </fieldset>
 
-              {/* Submit Button */}
               <button
                 type="submit"
-                className="btn btn-primary btn-large"
+                className="btn btn-primary btn-full"
                 disabled={isProcessing}
               >
-                {isProcessing ? 'Processing Payment...' : `Pay $${finalTotal.toFixed(2)}`}
+                {isProcessing ? '⏳ Processing...' : `💳 Pay $${finalTotal.toFixed(2)}`}
               </button>
             </form>
           </div>

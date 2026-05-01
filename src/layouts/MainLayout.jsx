@@ -1,13 +1,13 @@
 import React from 'react';
-import { Header } from './Header';
-import Footer from './footer';
+import { Header } from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 import '../styles/Layout.css';
 
 /**
- * Layout Component - Wraps pages with Header and Footer
+ * MainLayout Component - Wraps pages with Header and Footer
  * All pages except Login and Signup use this layout
  */
-const Layout = ({ children }) => { 
+const MainLayout = ({ children }) => { 
   return ( 
     <div className="app-layout"> 
       <Header /> 
@@ -19,4 +19,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default MainLayout;

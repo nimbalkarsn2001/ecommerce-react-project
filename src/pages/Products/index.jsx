@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { useStore } from '../context/StoreContext';
-import ProductCard from '../component/ProductCard';
-import '../styles/Products.css';
+import { useStore } from '../../context/StoreContext';
+import ProductCard from '../../components/product/ProductCard';
+import '../../styles/Products.css';
 
 /**
  * Products Page Component
@@ -147,20 +147,10 @@ function Products() {
               <p className="empty-icon">🔍</p>
               <h2>No products found</h2>
               <p>Try adjusting your filters or search term</p>
-              <button
-                className="btn btn-secondary"
-                onClick={() => {
-                  setSearch('');
-                  setCategory('All');
-                  setMaxPrice(200);
-                }}
-              >
-                Reset Filters
-              </button>
             </div>
           ) : (
             <div className="products-grid">
-              {filteredProducts.map((product) => ( 
+              {filteredProducts.map((product) => (
                 <ProductCard
                   key={product.id}
                   product={product}
@@ -169,7 +159,7 @@ function Products() {
                   isInWishlist={isInWishlist(product.id)}
                   isInCart={isInCart(product.id)}
                 />
-              ))}   
+              ))}
             </div>
           )}
         </section>

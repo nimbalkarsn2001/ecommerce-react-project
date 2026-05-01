@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Auth.css';
+import '../../styles/Auth.css';
 
 /**
  * Forgot Password Page
@@ -106,7 +106,10 @@ function ForgotPassword() {
         </form>
 
         <p className="auth-footer">
-          Remember your password? <Link to="/login" className="auth-link">Sign in here</Link>
+          Remember your password?{' '}
+          <Link to="/login" className="auth-link">
+            Sign in here
+          </Link>
         </p>
       </div>
     </div>

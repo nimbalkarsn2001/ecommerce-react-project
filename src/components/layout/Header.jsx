@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
-import '../styles/Header.css';
+import { useStore } from '../../context/StoreContext';
+import '../../styles/Header.css';
 
 export const Header = () => {
   const { totalItems, wishlist, user, authLogout } = useStore();

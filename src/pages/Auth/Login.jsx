@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useStore } from '../context/StoreContext';
-import '../styles/Auth.css';
+import { useStore } from '../../context/StoreContext';
+import '../../styles/Auth.css';
 
 /**
  * Login Page Component

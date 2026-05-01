@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/ProductCard.css';
+import '../../styles/ProductCard.css';
+
 /**
  * ProductCard Component
  * Displays individual product with image, price, and action buttons
