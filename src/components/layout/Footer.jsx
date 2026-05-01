@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/Footer.css';
 
 function Footer() {
@@ -7,21 +8,24 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-section">
-          <h3>About</h3>
-          <p>Your trusted online destination for quality products and exceptional service.</p>
+        {/* Takes up 2 fraction units (2fr) */}
+        <div className="footer-section brand-section">
+          <h3>🛍️ EcommerceHub</h3>
+          <p>Your trusted online destination for quality products and exceptional service. We believe in delivering the best shopping experience directly to your doorstep.</p>
         </div>
 
+        {/* Takes up 1 fraction unit (1fr) */}
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/products">Products</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/products">Products</Link></li>
           </ul>
         </div>
 
+        {/* Takes up 1 fraction unit (1fr) */}
         <div className="footer-section">
           <h3>Policies</h3>
           <ul>
@@ -32,12 +36,13 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="footer-section">
+        {/* Takes up 1 fraction unit (1fr) */}
+        <div className="footer-section contact-info">
           <h3>Contact Us</h3>
           <ul>
-            <li>📧 support@ecommercehub.com</li>
-            <li>📞 1-800-SHOP-NOW</li>
-            <li>📍 123 Commerce Street, Shop City</li>
+            <li><span className="icon">📧</span> support@ecommercehub.com</li>
+            <li><span className="icon">📞</span> 1-800-SHOP-NOW</li>
+            <li><span className="icon">📍</span> 123 Commerce St, Shop City</li>
           </ul>
         </div>
       </div>
@@ -45,9 +50,9 @@ function Footer() {
       <div className="footer-bottom">
         <p>&copy; {currentYear} EcommerceHub. All rights reserved.</p>
         <div className="social-links">
-          <a href="#facebook" title="Facebook">f</a>
-          <a href="#twitter" title="Twitter">𝕏</a>
-          <a href="#instagram" title="Instagram">📷</a>
+          <a href="#facebook" title="Facebook" aria-label="Facebook">f</a>
+          <a href="#twitter" title="Twitter" aria-label="Twitter">𝕏</a>
+          <a href="#instagram" title="Instagram" aria-label="Instagram">📷</a>
         </div>
       </div>
     </footer>

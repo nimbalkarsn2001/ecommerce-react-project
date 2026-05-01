@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useStore } from '../../context/StoreContext';
-import '../../styles/Auth.css';
+import '../../styles/Auth/Register.css';
 
 /**
  * Signup Page Component

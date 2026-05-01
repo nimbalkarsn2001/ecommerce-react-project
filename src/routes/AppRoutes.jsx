@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useStore } from '../context/StoreContext';
 
 import MainLayout from '../layouts/MainLayout';
@@ -16,6 +16,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import ForgotPassword from '../pages/Auth/ForgotPassword';
 import NotFound from '../pages/NotFound';
+import AuthLayout from '../layouts/AuthLayout';
 
 /**
  * AppRoutes Component
@@ -35,17 +36,22 @@ function AppRoutes() {
       <Route path="/about" element={<MainLayout><About /></MainLayout>} />
       <Route path="/contact" element={<MainLayout><Contact /></MainLayout>} />
 
-      {/* Auth Routes (without layout) */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route element={<AuthLayout />}>
+        {/* If they hit /auth, redirect to login */}
+        <Route path="/auth" element={<Navigate to="login" replace />} />
+
+        {/* These pages render INSIDE the AuthLayout's <Outlet /> */}
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="forgot-password" element={<ForgotPassword />} />
+      </Route>
 
       {/* Protected Routes (with layout) */}
       <Route path="/products" element={
         <MainLayout>
-          <ProtectedRoute>
+          {/* <ProtectedRoute> */}
             <Products />
-          </ProtectedRoute>
+          {/* </ProtectedRoute> */}
         </MainLayout>
       } />
 
