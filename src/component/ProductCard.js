@@ -34,7 +34,7 @@ export default function ProductCard({
         <p className="product-category">{product.category}</p>
 
         <div className="product-price">
-          <span className="price">${product.price.toFixed(2)}</span>
+          <span className="price">Rs {product.price.toFixed(2)}</span>
           <span className="stock-count">({product.stock} left)</span>
         </div>
 

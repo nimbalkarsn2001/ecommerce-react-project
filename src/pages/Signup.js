@@ -83,7 +83,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
             <div className="input-wrapper">
-              <span className="input-icon">👤</span>
+              <span className="input-icon"></span>
               <input
                 type="text"
                 id="firstName"
@@ -101,7 +101,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="lastName">Last Name</label>
             <div className="input-wrapper">
-              <span className="input-icon">👤</span>
+              <span className="input-icon"></span>
               <input
                 type="text"
                 id="lastName"
@@ -119,7 +119,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
             <div className="input-wrapper">
-              <span className="input-icon">📧</span>
+              <span className="input-icon"></span>
               <input
                 type="email"
                 id="email"
@@ -137,7 +137,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="mobileNo">Mobile Number</label>
             <div className="input-wrapper">
-              <span className="input-icon">📱</span>
+              <span className="input-icon"></span>
               <input
                 type="tel"
                 id="mobileNo"
@@ -156,7 +156,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="gender">Gender</label>
             <div className="input-wrapper">
-              <span className="input-icon">🧑</span>
+              <span className="input-icon"></span>
               <select
                 id="gender"
                 name="gender"
@@ -177,7 +177,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <div className="input-wrapper">
-              <span className="input-icon">🔒</span>
+              <span className="input-icon"></span>
               <input
                 type={showPassword ? 'text' : 'password'}
                 id="password"
@@ -202,7 +202,7 @@ function Signup() {
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <div className="input-wrapper">
-              <span className="input-icon">🔒</span>
+              <span className="input-icon"></span>
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 id="confirmPassword"
